@@ -8,6 +8,7 @@ import RouteWithLayout from "./components/RouteWithLayout";
 
 const Login = React.lazy(() => import('./page/Auth/Login'))
 const Devices = React.lazy(() => import('./page/Devices'))
+const Notify = React.lazy(() => import('./page/Notify'))
 
 const Routes = () => {
 
@@ -21,7 +22,14 @@ const Routes = () => {
             <RouteWithLayout
                 component={Devices}
                 layout={BasicLayout}
+                exact
                 path="/"
+            />
+
+            <RouteWithLayout
+                component={Notify}
+                layout={BasicLayout}
+                path="/notify"
             />
         </Switch>
     )
